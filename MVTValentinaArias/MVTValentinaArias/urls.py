@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from AppMVTValentinaArias.views import familiar
+from AppMVTValentinaArias.views import familiar, lista_familiares
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('agregar-familiar/<nombre>/<apellido>/<edad>/<fecha_nacimiento>/', familiar)
+    path('agregar-familiar/<nombre>/<apellido>/<edad>/<fecha_nacimiento>/', familiar),
+    path('ver-familiares/', lista_familiares),
 ]

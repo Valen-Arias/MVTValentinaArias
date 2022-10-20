@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.template import loader, Template, Context
+from django.template import loader
 
 from AppMVTValentinaArias.models import Familiar
 
@@ -16,18 +16,14 @@ def familiar(request, nombre, apellido, edad, fecha_nacimiento):
 
     plantilla = loader.get_template("agregar-familiar.html")
 
-    # familiares = Familiar.objects.all
-
-    # return render(request, "agregar-familiar.html", {"familiar": familiares})
-
     documento = plantilla.render(diccionario)
 
     return HttpResponse(documento)
 
-    # return HttpResponse(documento)
 
-    # lista_familiares = Familiar.objects.all()
 
-    # documento = plantilla.render({lista_familiares})
+def lista_familiares(request):
 
-    # return HttpResponse(documento)
+    lista = Familiar.objects.all()
+
+    return render(request, "mostrar-familiares.html", {"lista_familiares": lista})
