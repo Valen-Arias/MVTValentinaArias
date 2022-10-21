@@ -1,13 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    {% load static %}
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar un familiar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> 
+    <link href="{% static 'css/agregar-familiar.css' %}"  rel="stylesheet" >
+
 </head>
 
 <body>
-    <p>Se agregó el familiar {{nombre}} {{apellido}} de edad {{edad}} y fecha de nacimiento {{fecha_nacimiento}}.</p>
+
+    <header>
+        <h1>Agregar un familiar</h1>
+    </header>
+
+    <section class="container">
+
+        <article>
+            <h2>Familiar agregado!</h2>
+            <p class="texto">Se agregó el familiar {{nombre}} {{apellido}} de edad {{edad}} y fecha de nacimiento {{fecha_nacimiento}}.</p>            
+        </article>
+
+    </section>
+
+    <footer>
+        <a href="{% url 'ver_familiares' %}">Lista de familiares</a>
+    </footer>
+
 </body>
 </html>

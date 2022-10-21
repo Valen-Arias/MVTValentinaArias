@@ -21,5 +21,5 @@ from AppMVTValentinaArias.views import familiar, lista_familiares
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('agregar-familiar/<nombre>/<apellido>/<edad>/<fecha_nacimiento>/', familiar),
-    path('ver-familiares/', lista_familiares),
+    path('ver-familiares/', lista_familiares, name="ver_familiares"),
 ]
