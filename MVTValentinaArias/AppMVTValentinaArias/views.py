@@ -10,7 +10,7 @@ from AppMVTValentinaArias.models import Familiar
 def familiar(request, nombre, apellido, edad, fecha_nacimiento):
     
     familiar = Familiar(nombre = nombre, apellido = apellido, edad = edad, fecha_nacimiento = fecha_nacimiento)
-    # familiar.save()
+    familiar.save()
 
     diccionario = {"nombre": nombre, "apellido": apellido, "edad": edad, "fecha_nacimiento": fecha_nacimiento}
 

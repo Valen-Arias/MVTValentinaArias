@@ -1,20 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    {% load static %}
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mostrar familiares</title>
+    <title>Agregar un familiar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> 
+    <link href="{% static 'css/mostrar-familiares.css' %}"  rel="stylesheet" >
 </head>
 
 <body>
-    
-    <ul>
-        {% for familiar in lista_familiares %}
-            <li>Nombre y apellido: {{familiar.nombre}} {{familiar.apellido}} - Edad: {{familiar.edad}} - Fecha de nacimiento: {{familiar.fecha_nacimiento}}.</li>
-        {% endfor %}
-    </ul>   
-        
+
+    <header>
+        <h1>Lista de familiares</h1>
+    </header>
+
+    <section class="container">
+        <article>
+            <ul>
+                {% for familiar in lista_familiares %}
+                    <li>Nombre y apellido: {{familiar.nombre}} {{familiar.apellido}} - Edad: {{familiar.edad}} - Fecha de nacimiento: {{familiar.fecha_nacimiento}}.</li>
+                {% endfor %}
+            </ul>   
+        </article>
+    </section>
 
 </body>
 </html>
